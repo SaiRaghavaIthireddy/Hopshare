@@ -15,7 +15,7 @@ import SearchResultScreen from "../screens/SearchResultsScreens"; // Add SearchR
 import carPoolDetailsScreen from "../screens/carPoolDetailsScreen"; // Add carPoolDetailsScreen
 import BookingConfirmationScreen from "../screens/BookingConfirmationScreen"; // Add BookingConfirmationScreen
 import UserProfileScreen from "../screens/UserProfileScreen"; // Add UserProfileScreen
-import SOSAlertScreens from  "../screens/SOSAlertScreens"; // Add SOSAlertScreens
+import SOSAlertScreens from "../screens/SOSAlertScreens"; // Add SOSAlertScreens
 import RatingsScreen from "../screens/RatingsScreen"
 import Notifications from "../screens/NotificationScreen"
 import VerificationScreen from "../screens/VerificationScreen"
@@ -26,28 +26,28 @@ const Stack = createStackNavigator();
 export default function App() {
   return (
 
-      <SafeAreaView style={styles.container}>
-        <Stack.Navigator initialRouteName="Home" screenOptions={{ headerShown: false }}>
-          <Stack.Screen name="SplashScreen" component={SplashScreen} />
+    <SafeAreaView style={styles.container}>
+      <Stack.Navigator initialRouteName="SplashScreen" screenOptions={{ headerShown: false }}>
+        <Stack.Screen name="SplashScreen" component={SplashScreen} />
         <Stack.Screen name="Onboarding" component={onboardingScreen} />
-    <Stack.Screen name="Login" component={LoginScreen} />
-    <Stack.Screen name="Signup" component={SignUpScreen} />
-          <Stack.Screen name="Home" component={HomeScreen} />
-          <Stack.Screen name="SearchResults" component={SearchResultScreen} />
-          <Stack.Screen name="RideConfirmation" component={RideConfirmationScreen} />   
-          <Stack.Screen name="carPoolDetailsScreen" component={carPoolDetailsScreen} />  
-          <Stack.Screen name="BookingConfirmation" component={BookingConfirmationScreen} />
-          <Stack.Screen name="UserProfile" component={UserProfileScreen} />
-          <Stack.Screen name="SOSAlert" component={SOSAlertScreens} />
-          <Stack.Screen name="Ratings" component={RatingsScreen} />
-          <Stack.Screen name="Notifications" component={Notifications} />
-          <Stack.Screen name="Verification" component={VerificationScreen} />
-          <Stack.Screen name="UploadDocument" component={UploadDocumentScreen} />
-          
+        <Stack.Screen name="Login" component={LoginScreen} />
+        <Stack.Screen name="Signup" component={SignUpScreen} />
+        <Stack.Screen name="Home" component={HomeScreen} />
+        <Stack.Screen name="SearchResults" component={SearchResultScreen} />
+        <Stack.Screen name="RideConfirmation" component={RideConfirmationScreen} />
+        <Stack.Screen name="carPoolDetailsScreen" component={carPoolDetailsScreen} />
+        <Stack.Screen name="BookingConfirmation" component={BookingConfirmationScreen} />
+        <Stack.Screen name="UserProfile" component={UserProfileScreen} />
+        <Stack.Screen name="SOSAlert" component={SOSAlertScreens} />
+        <Stack.Screen name="Ratings" component={RatingsScreen} />
+        <Stack.Screen name="Notifications" component={Notifications} />
+        <Stack.Screen name="Verification" component={VerificationScreen} />
+        <Stack.Screen name="UploadDocument" component={UploadDocumentScreen} />
 
-        </Stack.Navigator>
-        <StatusBar style="auto" />
-      </SafeAreaView>
+
+      </Stack.Navigator>
+      <StatusBar style="auto" />
+    </SafeAreaView>
 
   );
 }

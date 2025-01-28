@@ -1,3 +1,4 @@
+import { colors } from '@/src/Common/ColorPalette';
 import React from 'react';
 import { View, Text, StyleSheet, FlatList, Image, TouchableOpacity } from 'react-native';
 
@@ -119,7 +120,7 @@ const styles = StyleSheet.create({
     marginTop: 5,
     paddingVertical: 5,
     paddingHorizontal: 10,
-    backgroundColor: '#D84B4B',
+    backgroundColor: colors.secondary,
     borderRadius: 5,
     alignSelf: 'flex-start',
   },

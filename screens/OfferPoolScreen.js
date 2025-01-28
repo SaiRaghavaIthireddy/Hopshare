@@ -1,3 +1,4 @@
+import { colors } from '@/src/Common/ColorPalette';
 import React, { useState } from 'react';
 import { View, Text, TextInput, TouchableOpacity, StyleSheet } from 'react-native';
 
@@ -81,7 +82,7 @@ const styles = StyleSheet.create({
     marginBottom: 15,
   },
   button: {
-    backgroundColor: '#D84B4B',
+    backgroundColor: colors.secondary,
     paddingVertical: 12,
     paddingHorizontal: 50,
     borderRadius: 5,

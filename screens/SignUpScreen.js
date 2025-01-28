@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { View, Text, TextInput, TouchableOpacity, StyleSheet, Image } from 'react-native';
-
+import {colors} from '../src/Common/ColorPalette';
 export default function RegisterScreen({ navigation }) {
   const [userName, setUserName] = useState('');
   const [email, setEmail] = useState('');
@@ -78,7 +78,7 @@ const styles = StyleSheet.create({
     position: 'absolute',
     top: 20,
     left: 10,
-    color: '#D84B4B',
+    color: colors.primary,
   },
   header: {
     fontSize: 32,
@@ -115,7 +115,7 @@ const styles = StyleSheet.create({
     height: '100%',
   },
   button: {
-    backgroundColor: '#D84B4B',
+    backgroundColor: colors.secondary,
     paddingVertical: 12,
     paddingHorizontal: 50,
     borderRadius: 5,

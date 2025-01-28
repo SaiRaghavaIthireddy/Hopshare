@@ -1,3 +1,4 @@
+import { colors } from '@/src/Common/ColorPalette';
 import React from 'react';
 import { View, Text, StyleSheet, Image, TouchableOpacity, FlatList } from 'react-native';
 
@@ -116,7 +117,7 @@ const styles = StyleSheet.create({
   },
   logoutButton: {
     marginTop: 20,
-    backgroundColor: '#D84B4B',
+    backgroundColor: colors.secondary,
     paddingVertical: 12,
     alignItems: 'center',
     borderRadius: 5,

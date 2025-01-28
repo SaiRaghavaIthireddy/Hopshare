@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { View, Text, TextInput, TouchableOpacity, StyleSheet, Image } from 'react-native';
-
+import {colors} from '../src/Common/ColorPalette';
 export default function LoginScreen({ navigation }) {
   const [phoneNumber, setPhoneNumber] = useState('');
 
@@ -8,7 +8,7 @@ export default function LoginScreen({ navigation }) {
     // Simulating the login action with the provided phone number
     console.log('Logged in with phone number:', phoneNumber);
     // Navigate to the next screen (e.g., Home)
-    navigation.navigate('Home');
+    navigation.navigate('Verification');
   };
 
   return (
@@ -44,7 +44,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#f7f7f7', // Light background
+    backgroundColor: '#f7f7f7', 
     paddingHorizontal: 20,
   },
   header: {
@@ -83,7 +83,7 @@ const styles = StyleSheet.create({
     height: '100%',
   },
   button: {
-    backgroundColor: '#D84B4B',
+    backgroundColor: colors.secondary,
     paddingVertical: 12,
     paddingHorizontal: 50,
     borderRadius: 5,

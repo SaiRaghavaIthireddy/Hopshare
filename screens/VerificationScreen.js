@@ -1,9 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { View, Text, TextInput, TouchableOpacity, StyleSheet, Keyboard, Button } from 'react-native';
-
+import { colors } from '../src/Common/ColorPalette';
 export default function VerificationScreen({ navigation }) {
   const [otp, setOtp] = useState(['', '', '', '']); // Store OTP digits
   const [timer, setTimer] = useState(60); // Timer for OTP expiration
+  const inputRefs = useRef([]);
 
   useEffect(() => {
     // Countdown timer
@@ -17,6 +18,9 @@ export default function VerificationScreen({ navigation }) {
     const newOtp = [...otp];
     newOtp[index] = text;
     setOtp(newOtp);
+    if (text && index < 3) {
+      inputRefs.current[index + 1].focus();
+    }
   };
 
   const handleVerify = () => {
@@ -25,14 +29,6 @@ export default function VerificationScreen({ navigation }) {
     console.log('OTP entered:', otpCode);
     // Navigate to next screen on successful verification
     navigation.navigate('Home');
-  };
-
-  const handleFocusNextInput = (index) => {
-    // Move focus to the next input automatically after each character is entered
-    if (index < 3) {
-      // Select next input field
-      this[`otpInput${index + 1}`].focus();
-    }
   };
 
   return (
@@ -55,13 +51,8 @@ export default function VerificationScreen({ navigation }) {
             keyboardType="numeric"
             maxLength={1}
             value={digit}
-            onChangeText={(text) => {
-              handleOtpChange(text, index);
-              handleFocusNextInput(index); // Focus next input automatically
-            }}
-            ref={(input) => {
-              this[`otpInput${index}`] = input;
-            }}
+            onChangeText={(text) => handleOtpChange(text, index)}
+            ref={(input) => (inputRefs.current[index] = input)}
           />
         ))}
       </View>
@@ -128,7 +119,7 @@ const styles = StyleSheet.create({
     marginBottom: 20,
   },
   button: {
-    backgroundColor: '#D84B4B',
+    backgroundColor: colors.secondary,
     paddingVertical: 12,
     paddingHorizontal: 50,
     borderRadius: 5,

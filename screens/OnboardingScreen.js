@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, Text, Button, StyleSheet, ScrollView, Image } from 'react-native';
-
+import {colors} from '../src/Common/ColorPalette';
 export default function OnboardingScreen({ navigation }) {
   return (
     <ScrollView contentContainerStyle={styles.container}>
@@ -30,7 +30,7 @@ export default function OnboardingScreen({ navigation }) {
 
       {/* Get Started Button */}
       <View style={styles.buttonContainer}>
-        <Button title="Get Started" onPress={() => navigation.navigate('Home')} />
+        <Button title="Get Started" onPress={() => navigation.navigate('Login')} />
       </View>
       
     </ScrollView>
