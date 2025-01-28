@@ -3,46 +3,16 @@ import { View, Text, StyleSheet, FlatList, Image } from 'react-native';
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
 import { NavigationContainer } from '@react-navigation/native';
 import MyPoolScreen from './MyPoolScreen';
+import RequestForPool from './RequestForPool';
 // Sample Data for the pools
-const tripData = [
-  {
-    id: '1',
-    name: 'Hawken',
-    date: 'Today | 10:30 pm',   
-    source: '6391 Elgin St. Celina',
-    destination: '2464 Royal Ln. Mesa',
-    image: 'https://via.placeholder.com/40',
-  },
-  {
-    id: '2',
-    name: 'Wilson',
-    date: '22 June | 10:30 pm',
-    source: '6391 Elgin St. Celina',
-    destination: '2464 Royal Ln. Mesa',
-    image: 'https://via.placeholder.com/40',
-  },
-  {
-    id: '3',
-    name: 'Elen',
-    date: '23 June | 10:30 pm',
-    source: '6391 Elgin St. Celina',
-    destination: '2464 Royal Ln. Mesa',
-    image: 'https://via.placeholder.com/40',
-  },
-];
+
 
 const Tab = createMaterialTopTabNavigator();
 
 
 
 // Screen for Request for Pool
-const RequestPoolScreen = () => {
-  return (
-    <View style={styles.container}>
-      <Text style={styles.noPoolText}>No requests for pool yet.</Text>
-    </View>
-  );
-};
+
 
 export default function MyTripScreen() {
   return (
@@ -56,7 +26,7 @@ export default function MyTripScreen() {
         }}
       >
         <Tab.Screen name="My Pool" component={MyPoolScreen} />
-        <Tab.Screen name="Request for Pool" component={RequestPoolScreen} />
+        <Tab.Screen name="Request for Pool" component={RequestForPool} />
       </Tab.Navigator>
   
   );

@@ -9,7 +9,7 @@ import { FontAwesome } from '@expo/vector-icons';
 import FindPoolScreen from "../screens/FindPoolScreen"
 import OfferPoolScreen from "../screens/OfferPoolScreen"
 import MyTripScreen from "../screens/MyTripScreen"
-// import MyTripScreen from './screens/MyTripScreen';
+import ProfileScreen from "../screens/ProfileScreen"
 // import ProfileScreen from './screens/ProfileScreen';
 
 const Tab = createBottomTabNavigator();
@@ -50,7 +50,7 @@ export default function HomeScreen() {
             ),
           }}
         />
-        {/* <Tab.Screen
+        <Tab.Screen
           name="Profile"
           component={ProfileScreen}
           options={{
@@ -58,7 +58,7 @@ export default function HomeScreen() {
               <FontAwesome name="user" size={size} color={color} />
             ),
           }}
-        /> */}
+        />
       </Tab.Navigator>
   );
 }
