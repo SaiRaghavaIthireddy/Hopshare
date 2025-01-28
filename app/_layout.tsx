@@ -18,13 +18,16 @@ import UserProfileScreen from "../screens/UserProfileScreen"; // Add UserProfile
 import SOSAlertScreens from  "../screens/SOSAlertScreens"; // Add SOSAlertScreens
 import RatingsScreen from "../screens/RatingsScreen"
 import Notifications from "../screens/NotificationScreen"
+import VerificationScreen from "../screens/VerificationScreen"
+import UploadDocumentScreen from "../screens/UploadDocumentScreen"
+
 const Stack = createStackNavigator();
 
 export default function App() {
   return (
 
       <SafeAreaView style={styles.container}>
-        <Stack.Navigator initialRouteName="Login" screenOptions={{ headerShown: false }}>
+        <Stack.Navigator initialRouteName="Home" screenOptions={{ headerShown: false }}>
           <Stack.Screen name="SplashScreen" component={SplashScreen} />
         <Stack.Screen name="Onboarding" component={onboardingScreen} />
     <Stack.Screen name="Login" component={LoginScreen} />
@@ -38,6 +41,10 @@ export default function App() {
           <Stack.Screen name="SOSAlert" component={SOSAlertScreens} />
           <Stack.Screen name="Ratings" component={RatingsScreen} />
           <Stack.Screen name="Notifications" component={Notifications} />
+          <Stack.Screen name="Verification" component={VerificationScreen} />
+          <Stack.Screen name="UploadDocument" component={UploadDocumentScreen} />
+          
+
         </Stack.Navigator>
         <StatusBar style="auto" />
       </SafeAreaView>

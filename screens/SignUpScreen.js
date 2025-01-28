@@ -1,60 +1,66 @@
 import React, { useState } from 'react';
-import { View, TextInput, Button, Text, StyleSheet } from 'react-native';
+import { View, Text, TextInput, TouchableOpacity, StyleSheet, Image } from 'react-native';
 
-export default function SignupScreen({ navigation }) {
-  const [name, setName] = useState('');
+export default function RegisterScreen({ navigation }) {
+  const [userName, setUserName] = useState('');
   const [email, setEmail] = useState('');
-  const [phone, setPhone] = useState('');
-  const [password, setPassword] = useState('');
+  const [mobileNumber, setMobileNumber] = useState('');
 
-  const handleSignup = () => {
-    // Implement your signup logic here
-    console.log('Signing up...');
-    navigation.navigate('Home'); // Navigate to Home screen after successful signup
+  const handleRegister = () => {
+    // Logic for registering the user
+    console.log('Registering with:', { userName, email, mobileNumber });
+    // Navigate to the next screen after successful registration
+    navigation.navigate('Home');
   };
 
   return (
     <View style={styles.container}>
-      <Text style={styles.header}>Sign Up</Text>
+      <TouchableOpacity onPress={() => navigation.goBack()}>
 
-      <TextInput
-        style={styles.input}
-        placeholder="Full Name"
-        value={name}
-        placeholderTextColor={"#000"}
-        onChangeText={setName}
-      />
-      <TextInput
-        style={styles.input}
-        placeholder="Email"
-        value={email}
-        placeholderTextColor={"#000"}
-        onChangeText={setEmail}
-      />
-      <TextInput
-        style={styles.input}
-        placeholder="Phone Number"
-        value={phone}
-        placeholderTextColor={"#000"}
-        onChangeText={setPhone}
-      />
-      <TextInput
-        style={styles.input}
-        placeholder="Password"
-        value={password}
-        placeholderTextColor={"#000"}
-        secureTextEntry
-        onChangeText={setPassword}
-      />
+      </TouchableOpacity>
+      
+      <Text style={styles.header}>Register</Text>
+      <Text style={styles.subheader}>Welcome please create your account using email address</Text>
 
-      <Button title="Sign Up" onPress={handleSignup} />
+      {/* User Name Input */}
+      <View style={styles.inputContainer}>
+        <Image source={{uri: 'https://img.icons8.com/ios/452/user.png'}} style={styles.icon} />
+        <TextInput
+          style={styles.input}
+          placeholder="Enter your user name"
+          value={userName}
+          onChangeText={setUserName}
+        />
+      </View>
 
-      <Text
-        style={styles.loginLink}
-        onPress={() => navigation.navigate('Login')}
-      >
-        Already have an account? Log In
-      </Text>
+      {/* Email Input */}
+      <View style={styles.inputContainer}>
+        <Image source={{uri: 'https://img.icons8.com/ios/452/email.png'}} style={styles.icon} />
+        <TextInput
+          style={styles.input}
+          placeholder="Enter your email address"
+          keyboardType="email-address"
+          value={email}
+          onChangeText={setEmail}
+        />
+      </View>
+
+      {/* Mobile Number Input */}
+      <View style={styles.inputContainer}>
+        <Image source={{uri: 'https://img.icons8.com/ios/452/phone.png'}} style={styles.icon} />
+        <TextInput
+          style={styles.input}
+          placeholder="Enter your mobile number"
+          keyboardType="phone-pad"
+          value={mobileNumber}
+          onChangeText={setMobileNumber}
+        />
+      </View>
+
+      {/* Register Button */}
+      <TouchableOpacity style={styles.button} onPress={handleRegister}>
+        <Text style={styles.buttonText}>Register</Text>
+      </TouchableOpacity>
     </View>
   );
 }
@@ -62,25 +68,64 @@ export default function SignupScreen({ navigation }) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    padding: 20,
     justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#fff',
+    paddingHorizontal: 20,
+  },
+  backButton: {
+    fontSize: 30,
+    position: 'absolute',
+    top: 20,
+    left: 10,
+    color: '#D84B4B',
   },
   header: {
-    fontSize: 28,
+    fontSize: 32,
     fontWeight: 'bold',
+    color: '#333',
+    marginBottom: 10,
+  },
+  subheader: {
+    fontSize: 16,
+    color: '#666',
+    textAlign: 'center',
+    marginBottom: 40,
+  },
+  inputContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    backgroundColor: '#fff',
+    width: '100%',
+    height: 50,
+    borderRadius: 5,
+    borderWidth: 1,
+    borderColor: '#ddd',
     marginBottom: 20,
+    paddingLeft: 10,
+  },
+  icon: {
+    width: 20,
+    height: 20,
+    marginRight: 10,
   },
   input: {
-    height: 50,
-    borderColor: '#ccc',
-    borderWidth: 1,
-    marginBottom: 15,
-    paddingLeft: 10,
-    borderRadius: 5,
+    flex: 1,
+    fontSize: 16,
+    height: '100%',
   },
-  loginLink: {
-    color: 'blue',
-    textAlign: 'center',
-    marginTop: 10,
+  button: {
+    backgroundColor: '#D84B4B',
+    paddingVertical: 12,
+    paddingHorizontal: 50,
+    borderRadius: 5,
+    width: '100%',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  buttonText: {
+    color: '#fff',
+    fontSize: 18,
+    fontWeight: 'bold',
   },
 });
