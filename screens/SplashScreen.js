@@ -5,7 +5,7 @@ const SplashScreen = ({ navigation }) => {
   useEffect(() => {
     setTimeout(() => {
       navigation.replace('Onboarding'); 
-    }, 5000);
+    }, 1000);
   }, []);
 
   return (

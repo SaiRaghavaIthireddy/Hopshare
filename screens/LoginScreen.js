@@ -26,6 +26,7 @@ export default function LoginScreen({ navigation }) {
           style={styles.input}
           placeholder="Enter your Mobile number"
           keyboardType="phone-pad"
+          placeholderTextColor={"#000"}
           value={phoneNumber}
           onChangeText={setPhoneNumber}
         />

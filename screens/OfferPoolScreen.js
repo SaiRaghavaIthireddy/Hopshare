@@ -28,6 +28,7 @@ export default function OfferPoolScreen() {
         placeholder="Source location"
         value={sourceLocation}
         onChangeText={setSourceLocation}
+        placeholderTextColor={`#000`}
       />
 
       {/* Destination location */}
@@ -36,6 +37,7 @@ export default function OfferPoolScreen() {
         placeholder="Destination location"
         value={destinationLocation}
         onChangeText={setDestinationLocation}
+        placeholderTextColor={`#000`}
       />
 
       {/* Date & Time */}
@@ -44,6 +46,7 @@ export default function OfferPoolScreen() {
         placeholder="Date & time"
         value={dateTime}
         onChangeText={setDateTime}
+        placeholderTextColor={`#000`}
       />
 
       {/* Continue Button */}

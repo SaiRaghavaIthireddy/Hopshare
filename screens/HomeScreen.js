@@ -6,11 +6,11 @@ import { View, Text } from 'react-native';
 import { FontAwesome } from '@expo/vector-icons';
 
 // Screens for each tab
-import FindPoolScreen from "../screens/FindPoolScreen"
+// import FindPoolScreen from "../screens/FindPoolScreen"
+import FindPoolStack from "../screens/FindPoolStack"
 import OfferPoolScreen from "../screens/OfferPoolScreen"
 import MyTripScreen from "../screens/MyTripScreen"
 import ProfileScreen from "../screens/ProfileScreen"
-// import ProfileScreen from './screens/ProfileScreen';
 
 const Tab = createBottomTabNavigator();
 
@@ -25,7 +25,7 @@ export default function HomeScreen() {
       >
         <Tab.Screen
           name="Find Pool"
-          component={FindPoolScreen}
+          component={FindPoolStack}
           options={{
             tabBarIcon: ({ color, size }) => (
               <FontAwesome name="search" size={size} color={color} />

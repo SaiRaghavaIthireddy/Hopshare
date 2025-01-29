@@ -20,7 +20,7 @@ import RatingsScreen from "../screens/RatingsScreen"
 import Notifications from "../screens/NotificationScreen"
 import VerificationScreen from "../screens/VerificationScreen"
 import UploadDocumentScreen from "../screens/UploadDocumentScreen"
-
+import MapScreen from "../screens/MapScreen"
 const Stack = createStackNavigator();
 
 export default function App() {
@@ -43,7 +43,7 @@ export default function App() {
         <Stack.Screen name="Notifications" component={Notifications} />
         <Stack.Screen name="Verification" component={VerificationScreen} />
         <Stack.Screen name="UploadDocument" component={UploadDocumentScreen} />
-
+        <Stack.Screen name="MapScreen" component={MapScreen} />
 
       </Stack.Navigator>
       <StatusBar style="auto" />

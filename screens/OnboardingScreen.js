@@ -1,38 +1,40 @@
 import React from 'react';
 import { View, Text, Button, StyleSheet, ScrollView, Image } from 'react-native';
-import {colors} from '../src/Common/ColorPalette';
+import { colors } from '../src/Common/ColorPalette';
+
 export default function OnboardingScreen({ navigation }) {
   return (
     <ScrollView contentContainerStyle={styles.container}>
-
-      {/* Step 1 */}
+      {/* Step 1: Welcome */}
       <View style={styles.slide}>
-        {/* <Image source={require('./assets/welcome-image.png')} style={styles.image} /> */}
-        <Text style={styles.heading}>Welcome to RideShare</Text>
+        <Text style={styles.heading}>Welcome to HopShare</Text>
         <Text style={styles.description}>
-          Book your rides with ease and get to your destination in no time!
+          Share or request rides with ease and get to your destination in no time!
         </Text>
       </View>
 
-      {/* Step 2 */}
+      {/* Step 2: Offer CarPool */}
       <View style={styles.slide}>
-        {/* <Image source={require('./assets/location-icon.png')} style={styles.icon} /> */}
-        <Text style={styles.heading}>Step 1: Enter your locations</Text>
-        <Text style={styles.description}>Pick-up and drop-off addresses.</Text>
+        <Text style={styles.heading}>Offer CarPool</Text>
+        <Text style={styles.description}>
+          Share your ride with others and cover fuel costs. Offer a ride today!
+        </Text>
+        <Button title="Offer CarPool" onPress={() => navigation.navigate('OfferPool')} />
       </View>
 
-      {/* Step 3 */}
+      {/* Step 3: Request for CarPool */}
       <View style={styles.slide}>
-        {/* <Image source={require('./assets/ride-type-icon.png')} style={styles.icon} /> */}
-        <Text style={styles.heading}>Step 2: Select your ride type</Text>
-        <Text style={styles.description}>Choose Standard or Premium options.</Text>
+        <Text style={styles.heading}>Request for CarPool</Text>
+        <Text style={styles.description}>
+          Looking for a ride? Request a pool with nearby users!
+        </Text>
+        <Button title="Request CarPool" onPress={() => navigation.navigate('RequestPool')} />
       </View>
 
       {/* Get Started Button */}
       <View style={styles.buttonContainer}>
         <Button title="Get Started" onPress={() => navigation.navigate('Login')} />
       </View>
-      
     </ScrollView>
   );
 }

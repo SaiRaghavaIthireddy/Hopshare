@@ -2,7 +2,7 @@ import { colors } from '@/src/Common/ColorPalette';
 import React, { useState } from 'react';
 import { View, Text, TextInput, StyleSheet, TouchableOpacity } from 'react-native';
 
-export default function FindPoolScreen() {
+export default function FindPoolScreen({navigation}) {
   const [sourceLocation, setSourceLocation] = useState('');
   const [destinationLocation, setDestinationLocation] = useState('');
   const [dateTime, setDateTime] = useState('');
@@ -25,12 +25,10 @@ export default function FindPoolScreen() {
       </Text>
 
       {/* Source location */}
-      <TextInput
-        style={styles.input}
-        placeholder="Source location"
-        value={sourceLocation}
-        onChangeText={setSourceLocation}
-      />
+      <TouchableOpacity style={[{width:"100%"},styles.input]} onPress={()=>navigation.navigate("MapScreen")}>
+        <View><Text>Source Location</Text></View>      
+   </TouchableOpacity>
+
 
       {/* Destination location */}
       <TextInput
@@ -38,6 +36,7 @@ export default function FindPoolScreen() {
         placeholder="Destination location"
         value={destinationLocation}
         onChangeText={setDestinationLocation}
+        placeholderTextColor={`#000`}
       />
 
       {/* Date & time */}
@@ -46,6 +45,7 @@ export default function FindPoolScreen() {
         placeholder="Date & time"
         value={dateTime}
         onChangeText={setDateTime}
+        placeholderTextColor={`#000`}
       />
 
       {/* Number of seats */}
@@ -55,6 +55,7 @@ export default function FindPoolScreen() {
         keyboardType="numeric"
         value={noOfSeats}
         onChangeText={setNoOfSeats}
+        placeholderTextColor={`#000`}
       />
 
       {/* Find pool button */}
@@ -91,6 +92,7 @@ const styles = StyleSheet.create({
     borderRadius: 5,
     paddingLeft: 10,
     marginBottom: 15,
+    justifyContent:"center"
   },
   button: {
     backgroundColor: colors.secondary,
